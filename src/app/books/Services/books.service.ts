@@ -10,4 +10,9 @@ export class BooksService {
   get() {
     return this.http.get<Book[]>('http://localhost:3000/books');
   }
+
+  add(payload: Book) {
+    console.log(payload);
+    return this.http.post<Book>('http://localhost:3000/books', payload);
+  }
 }

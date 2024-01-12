@@ -1,0 +1,55 @@
+<div class="container">
+  <fieldset>
+    <legend>Add a new Book</legend>
+    <form>
+      <div class="form-group">
+        <label for="txtId">Id</label>
+        <input
+          type="text"
+          class="form-control"
+          id="txtId"
+          placeholder="Enter book title"
+          name="title"
+          [(ngModel)]="newBook.id"
+        />
+      </div>
+      <div class="form-group">
+        <label for="txtName">Title</label>
+        <input
+          type="text"
+          class="form-control"
+          id="txtName"
+          placeholder="Enter book title"
+          name="title"
+          [(ngModel)]="newBook.title"
+        />
+      </div>
+      <div class="form-group">
+        <label for="txtAuthor">Author</label>
+        <input
+          type="text"
+          class="form-control"
+          id="txtAuthor"
+          name="author"
+          placeholder="Enter book author"
+          [(ngModel)]="newBook.author"
+        />
+      </div>
+      <div class="form-group">
+        <label for="txtCost">Cost</label>
+        <input
+          type="text"
+          class="form-control"
+          id="txtCost"
+          name="cost"
+          placeholder="Enter book cost"
+          [(ngModel)]="newBook.cost"
+        />
+      </div>
+      <br />
+      <button type="button" (click)="SaveBook()" class="btn btn-primary">
+        Submit
+      </button>
+    </form>
+  </fieldset>
+</div>

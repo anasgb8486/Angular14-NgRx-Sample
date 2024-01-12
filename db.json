@@ -5,6 +5,24 @@
       "title": "Harry Potter and the Philosopher's Stone",
       "author": "J.K. Rolling",
       "cost": "300"
+    },
+    {
+      "id": "2",
+      "title": "Harry Potter and the Chamber Of Secrets",
+      "author": "J.K. Rolling",
+      "cost": "350"
+    },
+    {
+      "id": "3",
+      "title": "Harry Potter and the Order of the Phoenix",
+      "author": "J.K. Rolling",
+      "cost": "400"
+    },
+    {
+      "id": "4",
+      "title": "Fantastic Beasts and Where to Find Them",
+      "author": "J.K. Rolling",
+      "cost": "450"
     }
   ]
 }
