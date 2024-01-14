@@ -8,10 +8,17 @@ import {
   saveNewBookApiSucess,
 } from './book.action';
 import { map, switchMap } from 'rxjs';
+import { Store } from '@ngrx/store';
+import { AppState } from 'src/app/shared/store/appstate';
+import { setApiStatus } from 'src/app/shared/store/app.action';
 
 @Injectable()
 export class BookEffects {
-  constructor(private actions$: Actions, private bookService: BooksService) {}
+  constructor(
+    private actions$: Actions,
+    private bookService: BooksService,
+    private appStore: Store<AppState>
+  ) {}
 
   loadAllBooks$ = createEffect(() =>
     this.actions$.pipe(
@@ -28,10 +35,19 @@ export class BookEffects {
     this.actions$.pipe(
       ofType(invokeSaveNewBookApi),
       switchMap((action) => {
-        console.log(action.payload);
-        return this.bookService
-          .add(action.payload)
-          .pipe(map((data) => saveNewBookApiSucess({ newBook: data })));
+        this.appStore.dispatch(
+          setApiStatus({ apiStatus: { apiResponseMessage: '', apiStatus: '' } })
+        );
+        return this.bookService.add(action.payload).pipe(
+          map((data) => {
+            this.appStore.dispatch(
+              setApiStatus({
+                apiStatus: { apiResponseMessage: '', apiStatus: 'success' },
+              })
+            );
+            return saveNewBookApiSucess({ newBook: data });
+          })
+        );
       })
     )
   );
