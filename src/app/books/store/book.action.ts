@@ -19,3 +19,23 @@ export const saveNewBookApiSucess = createAction(
   '[Books Api] save books api success',
   props<{ newBook: Book }>()
 );
+
+export const invokeUpdateBookApi = createAction(
+  '[Book Api] invoke update book api',
+  props<{ payload: Book }>()
+);
+
+export const updateBookApiSucess = createAction(
+  '[Books API] update book api success',
+  props<{ updatedBook: Book }>()
+);
+
+export const invokeDeleteBookApi = createAction(
+  '[Books API] invoke delete book api',
+  props<{ bookId: number }>()
+);
+
+export const deleteBookApiSucess = createAction(
+  '[Books Api] delete books api sucess',
+  props<{ deletedBookId: number }>()
+);

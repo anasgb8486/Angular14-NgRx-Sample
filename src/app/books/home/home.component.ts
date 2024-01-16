@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Store, select } from '@ngrx/store';
 import { selectBooks } from '../store/book.selector';
-import { invokeBooksApi } from '../store/book.action';
+import { invokeBooksApi, invokeDeleteBookApi } from '../store/book.action';
 
 @Component({
   selector: 'app-home',
@@ -16,4 +16,11 @@ export class HomeComponent implements OnInit {
   }
 
   books$ = this.store.pipe(select(selectBooks));
+
+  delete(id: number) {
+    const result = confirm('Are you sure to delete this book ?');
+    if (result) {
+      this.store.dispatch(invokeDeleteBookApi({ bookId: id }));
+    }
+  }
 }

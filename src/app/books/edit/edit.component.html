@@ -10,7 +10,7 @@
           id="txtId"
           placeholder="Enter book title"
           name="title"
-          [(ngModel)]="newBook.id"
+          [(ngModel)]="book.id"
         />
       </div>
       <div class="form-group">
@@ -21,7 +21,7 @@
           id="txtName"
           placeholder="Enter book title"
           name="title"
-          [(ngModel)]="newBook.title"
+          [(ngModel)]="book.title"
         />
       </div>
       <div class="form-group">
@@ -32,7 +32,7 @@
           id="txtAuthor"
           name="author"
           placeholder="Enter book author"
-          [(ngModel)]="newBook.author"
+          [(ngModel)]="book.author"
         />
       </div>
       <div class="form-group">
@@ -43,12 +43,16 @@
           id="txtCost"
           name="cost"
           placeholder="Enter book cost"
-          [(ngModel)]="newBook.cost"
+          [(ngModel)]="book.cost"
         />
       </div>
       <br />
       <div>
-        <button type="button" (click)="SaveBook()" class="btn btn-primary mr-2">
+        <button
+          type="button"
+          (click)="UpdateBook()"
+          class="btn btn-primary mr-2"
+        >
           Submit
         </button>
         &nbsp;

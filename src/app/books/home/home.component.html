@@ -14,6 +14,11 @@
             <li class="list-group-item">{{ book.cost | currency : "INR" }}</li>
           </ul>
         </div>
+        <div class="card-body">
+          <a [routerLink]="['/edit', book.id]" class="btn btn-dark">Edit</a>
+          &nbsp;
+          <a class="btn btn-danger" (click)="delete(book.id)">Delete</a>
+        </div>
       </div>
     </div>
   </div>
